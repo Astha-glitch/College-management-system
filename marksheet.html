@@ -1,0 +1,189 @@
+
+</html><HTML>
+    <HEAD>
+    <STYLE>
+    body
+    {
+     border-radius: 20px;
+     border-style: double;
+     border-color: black;
+     position: absolute;
+     width: 850px;
+     height: 705px;
+     top: 15px;
+     left: 45px;
+     padding: 30px 30px 50px 30px;
+     background-color:white;
+    }
+    #tbl,#tbl2
+    {
+    border-collapse:collapse;
+    font-size:18;
+    font-family:Century Gothic;
+    }
+    .demo
+    {
+    position:absolute;
+    left:35px;
+    top:380px;
+    font-size:17;
+    font-family:Arial;
+    font-weight:bold;
+    margin-top:35px;
+    border-collapse:collapse;
+    }
+    #demoname
+    {
+    font-size:15px
+    }
+    .btn
+    {
+    position:absolute;
+    top:355px;
+    left:720px;
+    }
+    </STYLE>
+    
+    <SCRIPT>
+    function myFun()
+    {
+    var a=document.form1.txtname.value;
+    document.getElementById("demoname").innerHTML=a;
+    var b=document.form1.txtfname.value;
+    document.getElementById("demofname").innerHTML=b;
+    var c=document.form1.txtins.value;
+    document.getElementById("demoins").innerHTML=c;
+    var d=document.form1.txtbatch.value;
+    document.getElementById("demobatch").innerHTML=d;
+    var e=document.form1.txtoffice.value;
+    document.getElementById("demooffice").innerHTML=e;
+    var f=document.form1.txtweb.value;
+    document.getElementById("demoweb").innerHTML=f;
+    var g=document.form1.txtit.value;
+    document.getElementById("demoit").innerHTML=g;
+    var h=document.form1.txtc.value;
+    document.getElementById("democ").innerHTML=h;
+    var txt1=eval(parseFloat(document.form1.txtoffice.value)+parseFloat(document.form1.txtweb.value)
+    +parseFloat(document.form1.txtit.value)+parseFloat(document.form1.txtc.value));
+    document.getElementById("demototal").innerHTML=txt1;
+    var txt2=eval(parseFloat(txt1*100)/400);
+    document.getElementById("demoper").innerHTML=txt2.toFixed(2)+"%";
+    
+    switch(true)
+    {
+    case(txt2>=80):
+    document.getElementById("demograde").innerHTML="A1";
+    break;
+    case(txt2>=70):
+    document.getElementById("demograde").innerHTML="A";
+    break;
+    case(txt2>=60):
+    document.getElementById("demograde").innerHTML="B";
+    break;
+    case(txt2>=50):
+    document.getElementById("demograde").innerHTML="C";
+    break;
+    case(txt2>=40):
+    document.getElementById("demograde").innerHTML="D";
+    break;
+    case(txt2<40):
+    document.getElementById("demograde").innerHTML="Fail";
+    break;
+    }
+    
+    }
+    </SCRIPT>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    </HEAD>
+    
+    <BODY>
+    <DIV class="color">
+    <H1 align="center"style="font-family:cambria;font-size:40";><U>STUDENT MARKSHEET</H1>
+    <FIELDSET>
+    <LEGEND> STUDENT INFORMATION </LEGEND>
+    <TABLE align="center" id="tbl">
+    <FORM name="form1">
+    </TR>
+    <TD width="140">Name:</TD> <TD><INPUT type="text" name="txtname"/></TD>
+    <TD> &nbsp; &nbsp;Roll No:</TD><TD> <INPUT type="text" name="txtfname"/></TD>
+    </TR>
+    
+    <TR>
+    <TD width="140" > Semester:</TD><TD> <INPUT type="text" name="txtins"/></TD>
+    
+    <!-- </TR>
+    </TABLE>
+    </FIELDSET></BR>
+    <FIELDSET>
+    <LEGEND> SUBJECTS MARKS </LEGEND>
+    <TABLE id="tbl2">
+    <TR>
+    <TD> Office Automation:</TD><TD> <INPUT type="text" name="txtoffice" maxlength="2" size="10"/> Out of 100 </TD>
+    
+    </TR>
+    <TR>
+    <TD> Web Designing:</TD><TD>  <INPUT type="text" name="txtweb" maxlength="2" size="10"/> Out of 100</TD>
+    </TR>
+    <TR>
+    <TD> IT:</TD><TD> <INPUT type="text" name="txtit" maxlength="2" size="10"/> Out of 100</TD>
+    </TR>
+    <TR>
+    <TD> C# Programing:</TD><TD> <INPUT type="text" name="txtc" maxlength="2" size="10" /> Out of 100</TD>
+    </TR>
+    <TR>
+    <TD>&nbsp;</TD>
+    </TR>
+    </TABLE>
+    </FIELDSET> -->
+    <DIV class="btn">
+    <button style="font-size:17" type="button" onclick='myFun()'>Submit</button>
+    <button style="font-size:17" type="Reset">Reset</button>
+    </DIV>
+    <DIV class="demo">
+      <TABLE border="1">
+    <TR>
+    <TH colspan="8" width="240"> Student Information </TH>
+    </TR>
+    <TR>
+    <TD width="135">Name:</TD><TD><FONT face="arial" id="demoname"></FONT></TD>
+    </TR>
+    <TR>
+    <TD width="135">Roll No.:</TD><TD><FONT face="arial" id="demofname"></FONT></TD>
+    </TR>
+    <TR>
+    <TD width="135">Semester:</TD><TD><FONT face="arial" id="demoins"></FONT></TD>
+    </TR>
+    <TD width="135">Batch:</TD> <TD><FONT face="arial" id="demobatch"></FONT></TD>
+    </TR>
+    <TR>
+    <TH colspan="8" width="240"> Subjects Marks </TH>
+    </TR>
+    <TR>
+    <TD width="135">INFO3104</TD> <TD><FONT face="arial" id="demooffice"></FONT></TD>
+    </TR>
+    <TR>
+    <TD width="135">INFO3103</TD><TD><FONT face="arial" id="demoweb"></FONT></TD>
+    </TR>
+    <TD width="135">INFO3102</TD><TD><FONT face="arial" id="demoit"></FONT></TD>
+    </TR>
+    <TR>
+    <TD width="135">INFO3101:</TD><TD><FONT face="arial" id="democ"></FONT></TD>
+    </TR>
+    <TR>
+    <TH colspan="8" width="240"> Marks Result </TH>
+    </TR>
+    <TR>
+    <TD width="135">TOTAL:</TD><TD> <FONT face="arial" id="demototal"></FONT></TT></TD>
+    </TR>
+    <TR>
+    <TD width="135">Percentage:</TD><TD><FONT face="arial" id="demoper"></FONT></TD>
+    </TR>
+    <TR>
+    <TD width="135">Grade:</TD><TD><FONT face="arial" id="demograde"></FONT></TD>
+    </TR>
+    </TABLE>
+    </DIV>
+    </DIV>
+    
+    </BODY>
+    </HTML>
